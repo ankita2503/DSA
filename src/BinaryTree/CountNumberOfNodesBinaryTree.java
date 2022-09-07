@@ -44,9 +44,9 @@ public class CountNumberOfNodesBinaryTree {
         if (node == null) {
             return 0;
         }
-        int leftHeight = MaxHeightOfBinaryTree(node.left);
-        int rightHeight = MaxHeightOfBinaryTree(node.right);
-        return Math.max(leftHeight, rightHeight) + 1;
+        int leftHeight = 1+MaxHeightOfBinaryTree(node.left);
+        int rightHeight = 1+MaxHeightOfBinaryTree(node.right);
+        return Math.max(leftHeight, rightHeight);
     }
 
     public static int sumNodes(Node node) {

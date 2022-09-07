@@ -42,6 +42,17 @@ public class BinaryTreePreOrder {
         return;
     }
 
+    // int[] nodes = {1, 2, 4, 5,7,-1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
+    public static int finMin(Node node) {
+        if (node == null) {
+            return Integer.MAX_VALUE;
+        }
+        int left = finMin(node.left);
+        int right = finMin(node.right);
+        int result = Math.min(left,right);
+        return Math.min(node.data, result);
+    }
+
     public static void TraverseInOrderBinaryTree(Node node) {
         if (node == null) {
             return;
@@ -81,7 +92,7 @@ public class BinaryTreePreOrder {
         int[] nodes = {1, 2, 4, -1, -1, 5, -1, -1, 3, -1, 6, -1, -1};
         BinaryTreePreOrder tree = new BinaryTreePreOrder();
         Node root = tree.BinaryTree(nodes);
-        System.out.print("PreOrder traversal :");
+       /* System.out.print("PreOrder traversal :");
         TraversePreOrderBinaryTree(root);
         System.out.println();
         System.out.print("InOrder traversal :");
@@ -91,7 +102,8 @@ public class BinaryTreePreOrder {
         TraversePostOrderBinaryTree(root);
         System.out.println();
         System.out.print("LevelOrder traversal :");
-        TraverseLevelOrderBinaryTree(root);
+        TraverseLevelOrderBinaryTree(root);*/
+        System.out.println(finMin(root));
     }
 
 
