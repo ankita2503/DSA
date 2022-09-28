@@ -19,6 +19,9 @@ public class LongestSubStringWithoutRepeating {
             char c = arr[end];
             if (map.containsKey(c)) {
                 map.put(c, map.get(c) + 1);
+                if(map.get('0')>1){
+
+                }
             } else {
                 map.put(c, 1);
             }
