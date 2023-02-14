@@ -1,0 +1,5 @@
+It is a file
+which should be test
+for
+stream
+operations

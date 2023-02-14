@@ -10,18 +10,22 @@ public class findMaxConsecutiveOnes {
         int start = 0;
         int end = 0;
         int max = Integer.MIN_VALUE;
-        int check = 0;
         Map<Integer, Integer> map = new LinkedHashMap();
         while (end < n) {
             int c = arr[end];
             map.put(c, map.getOrDefault(c, 0) + 1);
-            if (map.containsKey(0) && map.get(0) > 1) {
+            if (map.containsKey(0)) {
                 int ch = arr[start];
                 while (ch != 0) {
                     start++;
                     ch = arr[start];
                 }
-                map.put(0, map.get(0) - 1);
+                if (map.get(0)>1) {
+                    map.put(0, map.get(0)-1);
+                } else {
+                    map.remove(0);
+                }
+
                 start++;
                 max = Integer.max(max, end - start + 1);
             }
