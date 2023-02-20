@@ -58,6 +58,8 @@ public class Java8Stream {
         list.stream().filter(even).mapToInt(i->(i*i)).average();
         list.stream().filter(even).mapToInt(i->(i*i)).count();
 
+
+
         //l.stream().collect(Collectors.groupingBy()
         list.stream().findAny();
 
